@@ -13,43 +13,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- margin-top: 38px; -->
-    <div class="container my-5 rounded border p-5 shadow-sm">
-      
+    <div class="container my-5 custom-container">
+      <div class="page-header text-center mb-5">
+        <h1 class="page-title">Gestión de Reservas de Salas de Reunión</h1>
+        <p class="page-subtitle">Consulta la disponibilidad, crea salas y gestiona reservas en tiempo real</p>
+      </div>
+
       <!-- SALAS DISPONIBLES -->
       <div id="salas-dispo" class="mt-2 row">
-        <div class="col-lg-6 mb-3">
-          <h1>Salas disponibles</h1>
-          <!-- <div class=" mb-3 align-items-center">
-            <span>Deseas reservar una sala?</span>
-            <select name="" id="reserva-options" class="px-3 py-1 rounded">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-            <button class="ms-2 btn btn-success">Reservar</button>
-          </div> -->
-          
-        <table class="table table-striped table-hover">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title">Salas disponibles</h2>
+
+        <table class="table table-hover custom-table">
           <thead>
             <tr>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Capacidad</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Acciones</th>
-              </tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Capacidad</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
           <tbody id="table-dispo">
           </tbody>
         </table>
         </div>
-        <div class="col-lg-6">
-          <h1>SALAS CREADAS</h1>
-          <table  class="table table-striped table-hover">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title">Salas creadas</h2>
+          <table class="table table-hover custom-table">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -68,13 +59,13 @@
       </div>
       <hr>
 
-      <h1 class="text-center mb-5">Gestión de Reservas de Salas de Reunión</h1>
       <!-- CRUD DE SALAS -->
+      <h2 class="section-title">Crear nueva sala</h2>
       <form id="salas-form" class="row">
         <div class="form-group mb-3 col-md-6">
           <label for="sala-id" class="label-form fw-semibold">ID sala</label>
           <input
-            class="d-block w-100 rounded border px-3 py-1"
+            class="d-block w-100 custom-input px-3 py-2"
             type="number"
             name="sala-id"
             id="sala-id"
@@ -85,7 +76,7 @@
             >Nombre de la sala</label
           >
           <input
-            class="d-block w-100 rounded border px-3 py-1"
+            class="d-block w-100 custom-input px-3 py-2"
             type="text"
             name="sala-nombre"
             id="sala-nombre"
@@ -96,31 +87,29 @@
             >Capacidad de la sala</label
           >
           <input
-            class="d-block w-100 rounded border px-3 py-1"
+            class="d-block w-100 custom-input px-3 py-2"
             type="number"
             name="sala-capacidad"
             id="sala-capacidad"
           />
         </div>
-        <button type="submit" class="w-50 btn btn-primary mx-auto mt-3 mb-5">
-          Agregar
+        <button type="submit" class="w-50 btn custom-btn text-white mx-auto mt-3 mb-3">
+          Agregar sala
         </button>
       </form>
       
       <hr />
 
-
-
       <div class="reservas-container mt-5">
         <!-- CRUD DE RESERVAS-->
-        <h2>RESERVAS</h2>
+        <h2 class="section-title">Reservas</h2>
         <form id="reservas-form" class="row mt-2 d-none">
           <div class="form-group mb-3 col-md-6">
             <label for="reserva-id" class="label-form fw-semibold"
               >ID reserva</label
             >
             <input
-              class="d-block w-100 rounded border px-3 py-1"
+              class="d-block w-100 custom-input px-3 py-2"
               type="number"
               name="reserva-id"
               id="reserva-id"
@@ -132,7 +121,7 @@
               >Sala ID</label
             >
             <input
-              class="d-block w-100 rounded border px-3 py-1"
+              class="d-block w-100 custom-input px-3 py-2"
               type="number"
               name="reserva-salaID"
               id="reserva-salaID"
@@ -144,7 +133,7 @@
               >Nombre del reservante</label
             >
             <input
-              class="d-block w-100 rounded border px-3 py-1"
+              class="d-block w-100 custom-input px-3 py-2"
               type="text"
               name="reserva-nombre"
               id="reserva-nombre"
@@ -155,7 +144,7 @@
               >Fecha de inicio</label
             >
             <input
-              class="d-block w-100 rounded border px-3 py-1"
+              class="d-block w-100 custom-input px-3 py-2"
               type="date"
               name="reserva-fechaInicio"
               id="reserva-fechaInicio"
@@ -166,18 +155,18 @@
               >Fecha de fin</label
             >
             <input
-              class="d-block w-100 rounded border px-3 py-1"
+              class="d-block w-100 custom-input px-3 py-2"
               type="date"
               name="reserva-fechaFin"
               id="reserva-fechaFin"
             />
           </div>
 
-          <button type="submit" class="w-50 btn btn-primary mx-auto mt-3">
-            Agregar
+          <button type="submit" class="w-50 btn custom-btn text-white mx-auto mt-3">
+            Agregar reserva
           </button>
         </form>
-        <table id="table-all-reserva" class="d-none table table-striped table-hover">
+        <table id="table-all-reserva" class="d-none table table-hover custom-table">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -191,7 +180,7 @@
           <tbody id="table-reservas">
           </tbody>
         </table>
-        <p id="reserve-message" class="d-block">No hay reservas aún</p>
+        <p id="reserve-message" class="empty-state d-block">No hay reservas aún</p>
       </div>
       
     </div>

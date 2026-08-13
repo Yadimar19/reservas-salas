@@ -39,7 +39,7 @@ async function mostrarSalas(table) {
           <td scope="row">${sala.id}</td>
           <td>${sala.nombre}</td>
           <td>${sala.capacidad}</td>
-          <td>${sala.estado}</td>
+          <td><span class="estado-badge ${sala.estado === "Activa" ? "estado-badge--activa" : "estado-badge--inactiva"}">${sala.estado}</span></td>
           <td>
             <button class="btn btn-warning" onclick=editarSala(${sala.id})>Editar</button>
             <button class="btn btn-danger" onclick=eliminarSala(${sala.id})>Eliminar</button>
@@ -56,7 +56,7 @@ async function mostrarSalas(table) {
           <td>${sala.id}</td>
           <td>${sala.nombre}</td>
           <td>${sala.capacidad}</td>
-          <td>${sala.estado}</td>
+          <td><span class="estado-badge ${sala.estado === "Activa" ? "estado-badge--activa" : "estado-badge--inactiva"}">${sala.estado}</span></td>
           <td>
             <button id="btn-reserva" class="btn btn-success" ${sala.estado === "Inactiva" ? "disabled" : ""} onclick=reservar(${sala.id},"2")><a href="#reservas-form" class="text-white text-decoration-none">Reservar</a></button>
           </td>

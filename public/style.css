@@ -93,3 +93,61 @@ body {
 .btn-danger {
   border-radius: 8px;
 }
+
+/* Encabezado */
+.page-header {
+  padding-bottom: 10px;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.page-subtitle {
+  color: #636e72;
+  font-size: 1rem;
+}
+
+/* Estado de sala (badge) */
+.estado-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.estado-badge--activa {
+  background-color: #d4f8ec;
+  color: #00875a;
+}
+
+.estado-badge--inactiva {
+  background-color: #ffe3e3;
+  color: #c0392b;
+}
+
+/* Mensaje de estado vacío */
+.empty-state {
+  text-align: center;
+  color: #636e72;
+  padding: 20px 0;
+}
+
+/* Separadores */
+hr {
+  margin: 40px 0;
+  opacity: 0.15;
+}
+
+@media (max-width: 768px) {
+  .custom-container {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+}
